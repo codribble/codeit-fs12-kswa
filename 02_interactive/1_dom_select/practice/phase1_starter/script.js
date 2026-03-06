@@ -5,10 +5,18 @@
 // 미션 ① app-title 텍스트 바꾸기
 // 힌트: document.getElementById('app-title')로 선택 후 .textContent 사용
 // 여기에 코드를 작성하세요 ↓
+const appTitle = document.getElementById("app-title");
+appTitle.textContent = "나만의 Todo 앱";
 
 // 미션 ② app-subtitle 텍스트 바꾸기
+const appSubTitle = document.getElementById("app-subtitle");
+appSubTitle.textContent = "Todo List";
 
 // 미션 ③ remaining-count 숫자를 3으로 바꾸기
+const remainingCount = document.getElementById("remaining-count");
+remainingCount.textContent = 3;
 
 // 미션 ④ todo-list 요소를 콘솔에 출력하기
 // 힌트: console.log()를 사용하세요
+const todoList = document.getElementById("todo-list");
+console.log(todoList);

@@ -11,6 +11,7 @@ const remainingCount = document.getElementById("remaining-count");
 function updateCount() {
   // 힌트: todoList.children.length 를 활용하세요
   // 여기에 코드를 작성하세요 ↓
+  remainingCount.textContent = todoList.children.length;
 }
 
 // 할 일 추가 함수
@@ -24,26 +25,42 @@ function addTodo() {
 
   // ① li 요소 만들기
   // const li = ...
+  const li = document.createElement("li");
+  li.classList.add("todo-item");
 
   // ② span 요소 만들기 + 텍스트 넣기
   // const span = ...
+  const span = document.createElement("span");
+  span.textContent = text;
 
   // ③ 삭제 버튼 만들기
   // const deleteBtn = ...
   // deleteBtn.textContent = '삭제'
   // deleteBtn.className = 'btn-delete'
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "삭제";
+  deleteBtn.classList.add("btn-delete");
 
   // ④ 삭제 버튼 클릭 시 li 삭제 + 카운트 업데이트
   // deleteBtn.addEventListener('click', function() {
   //     ...
   // });
+  deleteBtn.addEventListener("click", function (e) {
+    const curLi = e.currentTarget.closest("li");
+
+    curLi.remove();
+    updateCount();
+  });
 
   // ⑤ li에 span, deleteBtn 붙이기
   // li.appendChild(...)
   // li.appendChild(...)
+  li.appendChild(span);
+  li.appendChild(deleteBtn);
 
   // ⑥ todoList에 li 추가하기
   // todoList.appendChild(...)
+  todoList.appendChild(li);
 
   // ⑦ 입력창 비우기
   todoInput.value = "";
