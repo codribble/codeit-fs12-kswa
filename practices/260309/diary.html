@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나만의 일기장</title>
+    <link rel="stylesheet" href="diary.css" />
+  </head>
+  <body>
+    <header>
+      <h1>나만의 일기장</h1>
+    </header>
+
+    <main>
+      <!-- 일기 작성 폼 -->
+      <section>
+        <h2>새 일기 쓰기</h2>
+        <form id="diary-form" autocomplete="off">
+          <input
+            type="text"
+            id="title-input"
+            placeholder="제목을 입력하세요"
+            required
+          />
+          <textarea
+            id="content-input"
+            placeholder="오늘 하루는 어땠나요?"
+            required
+          ></textarea>
+          <select id="mood-select">
+            <option value="happy">😊 행복</option>
+            <option value="sad">😢 슬픔</option>
+            <option value="angry">😠 화남</option>
+            <option value="excited">🎉 신남</option>
+            <option value="confused">🤔 혼란</option>
+            <option value="calm">😌 평온</option>
+          </select>
+          <button type="submit" id="submit-btn">일기 추가</button>
+        </form>
+      </section>
+
+      <!-- 일기 목록 -->
+      <section>
+        <h2>일기 목록 <span id="total-counting"></span></h2>
+        <div id="diary-list"></div>
+        <p id="empty-message">아직 작성된 일기가 없습니다.</p>
+      </section>
+
+      <!-- 통계 -->
+      <section>
+        <h2>통계</h2>
+        <div id="stats"></div>
+      </section>
+    </main>
+
+    <script src="diary.js"></script>
+  </body>
+</html>
